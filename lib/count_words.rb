@@ -1,5 +1,6 @@
 def count_words(str)
   if str.is_a? String
+    # str.split.length
     string_array = str.split
     new_array =[]
     string_array.each do |word|
