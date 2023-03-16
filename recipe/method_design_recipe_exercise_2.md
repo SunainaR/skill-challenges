@@ -58,7 +58,7 @@ check_grammar("this is a sentence")
 # => false
 
 #8
-check_grammar("this, is, a, list") 
+check_grammar("this, is, a, list,") 
 # => false
 
 #9
