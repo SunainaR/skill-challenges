@@ -10,10 +10,10 @@ User story:
 <br/>Assuming that I can read 200 words a minute.
 
 Clarifications:
-* Return time value in seconds (rounded to nearest second)
+* Return time value in seconds (rounded to nearest second) Note: Would make this minutes and seconds seperately if refactored for readability
 * Input text as string
 * Could the wpm (words per minute) change
-* Does punctuation such as dashes count as a word
+* Assuming punctuation e.g. dashes will be count as word
 * Should empty string return zero, prompt user to enter another string or throw an error? (Assume it's the first for simplicity)
 
 ## 2. Design the Method Signature
@@ -61,10 +61,13 @@ extract_uppercase(nil) throws an error
 _Encode each example as a test. You can add to the above list as you go._
 
 ```ruby
+# https://thereadtime.com/
 calculate_read_time("", 200) => [0]
 calculate_read_time("Simple text", 200) => [1]
 calculate_read_time("This is the longest text you will ever read!", 200) => [3]
-calculate_read_time("This is my autobiography. I was born in 1586 and lived in a cottage by a river - the River Blob. Then left when I was fifty years old...", 200) => [7] 
+calculate_read_time("This is my autobiography. I was born in 1586 and lived in a cottage by a river - the River Blob. Then left when I was fifty years old...", 200) => [9] 
+calculate_read_time([500 WORD STRING], 200) => [126]
+calculate_read_time([6000 WORD STRING], 200) => [1513]
 ```
 
 ## 4. Implement the Behaviour
