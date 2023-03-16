@@ -27,6 +27,6 @@ RSpec.describe "count_words method" do
   end
 
   it "returns an error message for a non-string" do
-    expect { count_words(123) }.to raise_error RuntimeError
+    expect { count_words(123) }.to raise_error "not a string"
   end
 end

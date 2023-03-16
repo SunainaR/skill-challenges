@@ -9,8 +9,8 @@ def count_words(str)
   end
     new_array.length
   else
-    raise RuntimeError
+    raise "not a string"
   end
 end
 
-
+# count_words(12345)
