@@ -5,6 +5,8 @@
 
 <code>bundle exec rspec</code> run in the terminal will use the rspec version specified in gemfile. This is why good practice is to ensure gemfile is included within the respository.
 
+> RSpec expects to test classes, so we don't have to put the class name as a string following the descibe method.
+
 ## Single Method Program Design
 
 1. Desribe the problem, clarifying aspects of the user story if provided.
