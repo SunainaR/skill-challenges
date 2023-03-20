@@ -11,6 +11,12 @@ RSpec.describe TrackList do
       track_list = TrackList.new
       expect { track_list.view_listened_list }.to raise_error "There are no tracks in your listened list. Please use add_track methods."
     end
+
+    it "return error when track being added exists already" do
+      track_list = TrackList.new
+      track_list.add_track("Track 1")
+      expect { track_list.add_track("Track 1") }.to raise_error "This track already exists in your listened list."
+    end
   end
 
   context "When multiple tracks added" do
@@ -30,7 +36,7 @@ RSpec.describe TrackList do
       expect(result).to eq "Track 2, Track 1"
     end
   end
-  
+
   context "When track_add method called" do
     it "return a message that the track was added" do
       track_list = TrackList.new

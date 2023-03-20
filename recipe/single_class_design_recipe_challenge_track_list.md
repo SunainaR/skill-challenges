@@ -11,7 +11,7 @@ _Put or write the user story here. Add any clarifying notes you might have._
 * Going to assume user only adds one track at a time
 * Going to assume they want to return the list as a string to view the list
 * Going to assume the listened list will be ordered by when the user added i.e. original order in the array. In reality, would probably sort by/group by date_added, alphabetical, genre etc.
-* Going to assume the same track can be added twice i.e. no unique enforcement on the track name in listened_list -> in reality this may be different, might come back and change this e.g. hash used instead and name is hash keys or fail message if user adds an element to array that already matches track name.
+* Going to assume the same track can't be added twice and returns an error if the user tries to add it i.e. unique enforcement on the track name in listened_list 
 
 ## 2. Design the Class Interface
 
@@ -66,6 +66,11 @@ track_list = TrackList.new
 track_list.add_track("Track 1")
 # => "Track 1 added to listened list"
 
+# 6
+track_list = TrackList.new
+track_list.add_track("Track 1")
+track_list.add_track("Track 1") 
+# => fail "This track already exists in your listened list."
 ```
 
 _Encode each example as a test. You can add to the above list as you go._

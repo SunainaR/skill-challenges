@@ -5,8 +5,12 @@ class TrackList
 
   def add_track(track) #track is a string
     fail "Can't add an empty track." if track.empty?
-    @listened_list << track
-    "#{track} added to listened list"
+    if @listened_list.include?(track)
+      fail "This track already exists in your listened list."
+    else
+      @listened_list << track
+      "#{track} added to listened list"
+    end
   end
 
   def view_listened_list
