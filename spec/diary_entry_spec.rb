@@ -1,3 +1,9 @@
+
+
+
+=begin
+# Old code from step 5 - test driving a class
+
 require 'diary_entry'
 
 RSpec.describe DiaryEntry do
@@ -66,3 +72,5 @@ RSpec.describe DiaryEntry do
     end
   end
 end
+
+=end
