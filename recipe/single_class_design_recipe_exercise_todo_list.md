@@ -13,7 +13,7 @@ _Put or write the user story here. Add any clarifying notes you might have._
 > I want to mark tasks as complete and have them disappear from the list.
 
 * Going to assume they move to a completed list after completion rather than being deleted
-* Going to assume they want to eturn as string for view_task_list
+* Going to assume they want to return as string for view_task_list
 * Going to allow user to complete tasks or add tasks one at a time (May change this in the future).
 
 ## 2. Design the Class Interface
@@ -30,7 +30,7 @@ class Todo
   end
 
   def view_task_list
-  # returns all the tasks expect those marked as complete
+  # returns all the tasks except those marked as complete
   end
 
   def complete_task(task)
