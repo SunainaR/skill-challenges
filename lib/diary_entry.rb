@@ -3,7 +3,6 @@ class DiaryEntry
   def initialize(title, contents) # title, contents are strings
     @title = title
     @contents = contents
-    @word_count
     @previously_read_index = 0 
   end
 
@@ -14,12 +13,12 @@ class DiaryEntry
 
   def contents
     # Returns the contents as a string
-    @contents
+     @contents
   end
 
   def count_words
     # Returns the number of words in the contents as an integer
-    @word_count = @contents.split.length
+    @contents.split.length
   end
 
   def reading_time(wpm) # wpm is an integer representing
@@ -27,7 +26,7 @@ class DiaryEntry
     # Returns an integer representing an estimate of the reading time in minutes
     # for the contents at the given wpm.
 
-    full_read_time_mins = (@word_count/wpm.to_f).round
+    full_read_time_mins = (count_words/wpm.to_f).round
 
   end
 
